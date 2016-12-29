@@ -6,8 +6,9 @@ const process = require('child_process');
 
 
 try {
+    console.log('Scheduler started...........');
     new cronJob('* * * * * *', function () {
-        console.log('You will see this message every second');
+        console.log('Executing job....');
         try {
             //../../price_tracking/Price_tracking_framework/phantom_scrapers/start_scraping.js
             let child = process.spawn('node', ['../../price_tracking/Price_tracking_framework/phantom_scrapers/start_scraping.js']);
@@ -32,7 +33,8 @@ function listenToChildProcess(child){
     });
 
     child.stderr.on('data', function (err){
-        console.log('child stderr', err);
+        let buff = new Buffer(err);
+        console.log('child stderr',  buff.toString('utf8'));
     });
 
     child.on('exit', function (code){

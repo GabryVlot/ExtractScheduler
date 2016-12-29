@@ -1,0 +1,20 @@
+{
+  "name": "ExtractScheduler",
+  "description": "Schedule scraper script execution",
+  "version": "0.0.1",
+  "main": "start.js",
+  "dependencies": {
+    "cron" : "^1.2.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabryVlot/ExtractScheduler.git"
+  },
+  "keywords": [
+    "Scheduler",
+    "Scraper"
+  ],
+  "author": "GVlot",
+  "license": "ISC"
+}
